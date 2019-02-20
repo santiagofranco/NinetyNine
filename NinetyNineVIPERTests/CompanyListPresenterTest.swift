@@ -72,6 +72,26 @@ class CompanyListPresenterTest: XCTestCase {
         
     }
 
+    func test_show_message_error_loading_companies_when_load_companie_fails() {
+        
+        let givenError: NNError = .header
+        
+        presenter.didLoadCompaniesError(givenError)
+        
+        XCTAssertTrue(view.showLoadingCompaniesErrorCalled)
+        
+    }
+    
+    
+    func test_show_message_error_authentication_when_load_companies_fails_with_authentication_error() {
+        
+        let givenError: NNError = .authentication
+        
+        presenter.didLoadCompaniesError(givenError)
+        
+        XCTAssertTrue(view.showAuthenticationErrorCalled)
+        
+    }
     
     private class MockCompanyListView: CompanyListView {
         var delegate: CompanyListViewDelegate?
@@ -80,6 +100,8 @@ class CompanyListPresenterTest: XCTestCase {
         var showCompaniesCalled = false
         var companies: [Company] = []
         var hideLoadingCalled = false
+        var showLoadingCompaniesErrorCalled = false
+        var showAuthenticationErrorCalled = false
         
         func showLoading() {
             showLoadingCalled = true
@@ -92,6 +114,14 @@ class CompanyListPresenterTest: XCTestCase {
         
         func hideLoading() {
             hideLoadingCalled = true
+        }
+        
+        func showLoadingCompaniesError() {
+            showLoadingCompaniesErrorCalled = true
+        }
+        
+        func showAuthenticationError() {
+            showAuthenticationErrorCalled = true
         }
     }
     

@@ -35,4 +35,13 @@ extension CompanyListPresenter: CompanyListInteractorDelegate {
         view.showCompanies(companies)
         view.hideLoading()
     }
+    
+    func didLoadCompaniesError(_ error: NNError) {
+        switch error {
+        case .header:
+            view.showLoadingCompaniesError()
+        case .authentication:
+            view.showAuthenticationError()
+        }
+    }
 }

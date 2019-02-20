@@ -17,6 +17,7 @@
 		2F6F736F221D9F9F00EE091F /* CompanyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F736E221D9F9F00EE091F /* CompanyListPresenter.swift */; };
 		2F6F7371221DA00F00EE091F /* CompanyListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7370221DA00F00EE091F /* CompanyListContract.swift */; };
 		2F6F7374221DA34900EE091F /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7373221DA34900EE091F /* Company.swift */; };
+		2F6F7376221DAAEA00EE091F /* NNError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7375221DAAEA00EE091F /* NNError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		2F6F736E221D9F9F00EE091F /* CompanyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListPresenter.swift; sourceTree = "<group>"; };
 		2F6F7370221DA00F00EE091F /* CompanyListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListContract.swift; sourceTree = "<group>"; };
 		2F6F7373221DA34900EE091F /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		2F6F7375221DAAEA00EE091F /* NNError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				2F6F7373221DA34900EE091F /* Company.swift */,
+				2F6F7375221DAAEA00EE091F /* NNError.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6F7376221DAAEA00EE091F /* NNError.swift in Sources */,
 				2F6F736F221D9F9F00EE091F /* CompanyListPresenter.swift in Sources */,
 				2F6F7371221DA00F00EE091F /* CompanyListContract.swift in Sources */,
 				2F6F7340221D9EA000EE091F /* ViewController.swift in Sources */,

@@ -14,6 +14,8 @@ protocol CompanyListView: class {
     func showLoading()
     func showCompanies(_ companies: [Company])
     func hideLoading()
+    func showLoadingCompaniesError()
+    func showAuthenticationError()
 }
 
 protocol CompanyListViewDelegate: class {
@@ -29,4 +31,5 @@ protocol CompanyListInteractor: class {
 
 protocol CompanyListInteractorDelegate: class {
     func didLoadCompanies(_ companies: [Company])
+    func didLoadCompaniesError(_ error: NNError)
 }
