@@ -23,7 +23,7 @@ protocol CompanyListViewDelegate: class {
     func didTap(company: Company)
 }
 
-protocol CompanyListInteractor: class {
+protocol CompanyListInteractorProtocol: class {
     var delegate: CompanyListInteractorDelegate? { get set }
     
     func loadCompanies()
@@ -35,6 +35,6 @@ protocol CompanyListInteractorDelegate: class {
     func didLoadCompaniesError(_ error: NNError)
 }
 
-protocol CompanyListRouter: class {
+protocol CompanyListRouterProtocol: class {
     func openCompanyDetail(with company: Company)
 }

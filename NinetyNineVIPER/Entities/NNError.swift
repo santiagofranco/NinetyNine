@@ -9,6 +9,7 @@
 import Foundation
 
 enum NNError {
+    case data
     case header
     case authentication
 }

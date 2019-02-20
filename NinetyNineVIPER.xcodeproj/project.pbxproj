@@ -18,6 +18,15 @@
 		2F6F7371221DA00F00EE091F /* CompanyListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7370221DA00F00EE091F /* CompanyListContract.swift */; };
 		2F6F7374221DA34900EE091F /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7373221DA34900EE091F /* Company.swift */; };
 		2F6F7376221DAAEA00EE091F /* NNError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7375221DAAEA00EE091F /* NNError.swift */; };
+		2F6F7378221DB23800EE091F /* CompanyListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7377221DB23800EE091F /* CompanyListInteractor.swift */; };
+		2F6F7386221DB87100EE091F /* AbsNetMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F737F221DB87100EE091F /* AbsNetMethod.swift */; };
+		2F6F7387221DB87100EE091F /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7380221DB87100EE091F /* ApiService.swift */; };
+		2F6F7388221DB87100EE091F /* AbsNetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7381221DB87100EE091F /* AbsNetConfiguration.swift */; };
+		2F6F7389221DB87100EE091F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7382221DB87100EE091F /* Extensions.swift */; };
+		2F6F738A221DB87100EE091F /* AbsNetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7383221DB87100EE091F /* AbsNetError.swift */; };
+		2F6F738B221DB87100EE091F /* ApiUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7384221DB87100EE091F /* ApiUseCase.swift */; };
+		2F6F738C221DB87100EE091F /* AbsNetHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7385221DB87100EE091F /* AbsNetHeader.swift */; };
+		2F6F7391221DB92F00EE091F /* GetCompaniesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7390221DB92F00EE091F /* GetCompaniesUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +64,15 @@
 		2F6F7370221DA00F00EE091F /* CompanyListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListContract.swift; sourceTree = "<group>"; };
 		2F6F7373221DA34900EE091F /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		2F6F7375221DAAEA00EE091F /* NNError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNError.swift; sourceTree = "<group>"; };
+		2F6F7377221DB23800EE091F /* CompanyListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListInteractor.swift; sourceTree = "<group>"; };
+		2F6F737F221DB87100EE091F /* AbsNetMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsNetMethod.swift; sourceTree = "<group>"; };
+		2F6F7380221DB87100EE091F /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		2F6F7381221DB87100EE091F /* AbsNetConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsNetConfiguration.swift; sourceTree = "<group>"; };
+		2F6F7382221DB87100EE091F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2F6F7383221DB87100EE091F /* AbsNetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsNetError.swift; sourceTree = "<group>"; };
+		2F6F7384221DB87100EE091F /* ApiUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUseCase.swift; sourceTree = "<group>"; };
+		2F6F7385221DB87100EE091F /* AbsNetHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsNetHeader.swift; sourceTree = "<group>"; };
+		2F6F7390221DB92F00EE091F /* GetCompaniesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCompaniesUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +123,8 @@
 		2F6F733C221D9EA000EE091F /* NinetyNineVIPER */ = {
 			isa = PBXGroup;
 			children = (
+				2F6F737E221DB84500EE091F /* AbsNet */,
+				2F6F738D221DB8CB00EE091F /* APIClient */,
 				2F6F7372221DA32E00EE091F /* Entities */,
 				2F6F736D221D9F8700EE091F /* CompanyList */,
 				2F6F733D221D9EA000EE091F /* AppDelegate.swift */,
@@ -140,6 +160,7 @@
 			children = (
 				2F6F736E221D9F9F00EE091F /* CompanyListPresenter.swift */,
 				2F6F7370221DA00F00EE091F /* CompanyListContract.swift */,
+				2F6F7377221DB23800EE091F /* CompanyListInteractor.swift */,
 			);
 			path = CompanyList;
 			sourceTree = "<group>";
@@ -151,6 +172,28 @@
 				2F6F7375221DAAEA00EE091F /* NNError.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		2F6F737E221DB84500EE091F /* AbsNet */ = {
+			isa = PBXGroup;
+			children = (
+				2F6F7381221DB87100EE091F /* AbsNetConfiguration.swift */,
+				2F6F7383221DB87100EE091F /* AbsNetError.swift */,
+				2F6F7385221DB87100EE091F /* AbsNetHeader.swift */,
+				2F6F737F221DB87100EE091F /* AbsNetMethod.swift */,
+				2F6F7380221DB87100EE091F /* ApiService.swift */,
+				2F6F7384221DB87100EE091F /* ApiUseCase.swift */,
+				2F6F7382221DB87100EE091F /* Extensions.swift */,
+			);
+			path = AbsNet;
+			sourceTree = "<group>";
+		};
+		2F6F738D221DB8CB00EE091F /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				2F6F7390221DB92F00EE091F /* GetCompaniesUseCase.swift */,
+			);
+			path = APIClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,10 +329,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F6F7376221DAAEA00EE091F /* NNError.swift in Sources */,
+				2F6F738C221DB87100EE091F /* AbsNetHeader.swift in Sources */,
+				2F6F7388221DB87100EE091F /* AbsNetConfiguration.swift in Sources */,
+				2F6F738B221DB87100EE091F /* ApiUseCase.swift in Sources */,
 				2F6F736F221D9F9F00EE091F /* CompanyListPresenter.swift in Sources */,
 				2F6F7371221DA00F00EE091F /* CompanyListContract.swift in Sources */,
+				2F6F7386221DB87100EE091F /* AbsNetMethod.swift in Sources */,
+				2F6F7391221DB92F00EE091F /* GetCompaniesUseCase.swift in Sources */,
+				2F6F7378221DB23800EE091F /* CompanyListInteractor.swift in Sources */,
+				2F6F7387221DB87100EE091F /* ApiService.swift in Sources */,
+				2F6F738A221DB87100EE091F /* AbsNetError.swift in Sources */,
 				2F6F7340221D9EA000EE091F /* ViewController.swift in Sources */,
 				2F6F7374221DA34900EE091F /* Company.swift in Sources */,
+				2F6F7389221DB87100EE091F /* Extensions.swift in Sources */,
 				2F6F733E221D9EA000EE091F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +519,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CA2AKZS8UU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NinetyNineVIPER/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -485,6 +541,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CA2AKZS8UU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NinetyNineVIPER/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

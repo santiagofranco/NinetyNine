@@ -165,7 +165,7 @@ class CompanyListPresenterTest: XCTestCase {
         }
     }
     
-    private class MockCompanyListInteractor: CompanyListInteractor {
+    private class MockCompanyListInteractor: CompanyListInteractorProtocol {
         var delegate: CompanyListInteractorDelegate?
         
         var loadCompaniesCalled = false
@@ -175,7 +175,7 @@ class CompanyListPresenterTest: XCTestCase {
         }
     }
     
-    private class MockCompnayListRouter: CompanyListRouter {
+    private class MockCompnayListRouter: CompanyListRouterProtocol {
         
         var openCompanyDetailCalled = false
         var company: Company? = nil

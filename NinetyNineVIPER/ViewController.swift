@@ -8,11 +8,33 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CompanyListView {
+    func showLoading() {
+        
+    }
+    
+    func showCompanies(_ companies: [Company]) {
+        print(companies)
+    }
+    
+    func hideLoading() {
+        
+    }
+    
+    func showLoadingCompaniesError() {
+        
+    }
+    
+    func showAuthenticationError() {
+        
+    }
+    
 
+    var delegate: CompanyListViewDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        delegate?.viewDidLoad()
     }
 
 

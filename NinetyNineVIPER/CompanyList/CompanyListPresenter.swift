@@ -11,10 +11,10 @@ import Foundation
 class CompanyListPresenter {
     
     let view: CompanyListView
-    let interactor: CompanyListInteractor
-    let router: CompanyListRouter
+    let interactor: CompanyListInteractorProtocol
+    let router: CompanyListRouterProtocol
     
-    init(view: CompanyListView, interactor: CompanyListInteractor, router: CompanyListRouter) {
+    init(view: CompanyListView, interactor: CompanyListInteractorProtocol, router: CompanyListRouterProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router
@@ -47,7 +47,7 @@ extension CompanyListPresenter: CompanyListInteractorDelegate {
     
     func didLoadCompaniesError(_ error: NNError) {
         switch error {
-        case .header:
+        case .header, .data:
             view.showLoadingCompaniesError()
         case .authentication:
             view.showAuthenticationError()
