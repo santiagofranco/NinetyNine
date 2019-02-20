@@ -12,10 +12,12 @@ class CompanyListPresenter {
     
     let view: CompanyListView
     let interactor: CompanyListInteractor
+    let router: CompanyListRouter
     
-    init(view: CompanyListView, interactor: CompanyListInteractor) {
+    init(view: CompanyListView, interactor: CompanyListInteractor, router: CompanyListRouter) {
         self.view = view
         self.interactor = interactor
+        self.router = router
         
         self.view.delegate = self
         self.interactor.delegate = self
@@ -27,6 +29,10 @@ extension CompanyListPresenter: CompanyListViewDelegate {
     func viewDidLoad() {
         view.showLoading()
         interactor.loadCompanies()
+    }
+    
+    func didTap(company: Company) {
+        router.openCompanyDetail(with: company)
     }
 }
 

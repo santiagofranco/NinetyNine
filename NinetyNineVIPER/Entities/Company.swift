@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Company {
+struct Company: Equatable {
     let id: Int
     let name: String
     let ric: String

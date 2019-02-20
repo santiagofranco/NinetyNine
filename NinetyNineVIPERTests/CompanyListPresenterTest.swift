@@ -17,17 +17,21 @@ class CompanyListPresenterTest: XCTestCase {
     //Mocks
     private var interactor: MockCompanyListInteractor!
     private var view: MockCompanyListView!
+    private var router: MockCompnayListRouter!
     
     override func setUp() {
         
         view = MockCompanyListView()
         interactor = MockCompanyListInteractor()
+        router = MockCompnayListRouter()
         
-        presenter = CompanyListPresenter(view: view, interactor: interactor)
+        presenter = CompanyListPresenter(view: view, interactor: interactor, router: router)
     }
 
     override func tearDown() {
+        view = nil
         interactor = nil
+        router = nil
         presenter = nil
     }
     
@@ -92,7 +96,19 @@ class CompanyListPresenterTest: XCTestCase {
         XCTAssertTrue(view.showAuthenticationErrorCalled)
         
     }
-    
+
+    func test_open_company_details_when_user_taps_on_some_company() {
+        
+        let givenCompany = Company(id: 1, name: "Apple", ric: "APPL", sharePrice: 123.456)
+        
+        presenter.didTap(company: givenCompany)
+        
+        XCTAssertTrue(router.openCompanyDetailCalled)
+        XCTAssertNotNil(router.company)
+        XCTAssertEqual(router.company, givenCompany)
+        
+    }
+
     private class MockCompanyListView: CompanyListView {
         var delegate: CompanyListViewDelegate?
         
@@ -132,6 +148,17 @@ class CompanyListPresenterTest: XCTestCase {
         
         func loadCompanies() {
             loadCompaniesCalled = true
+        }
+    }
+    
+    private class MockCompnayListRouter: CompanyListRouter {
+        
+        var openCompanyDetailCalled = false
+        var company: Company? = nil
+        
+        func openCompanyDetail(with company: Company) {
+            openCompanyDetailCalled = true
+            self.company = company
         }
     }
 
