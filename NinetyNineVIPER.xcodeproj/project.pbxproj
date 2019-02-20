@@ -12,8 +12,11 @@
 		2F6F7343221D9EA000EE091F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F7341221D9EA000EE091F /* Main.storyboard */; };
 		2F6F7345221D9EA300EE091F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F7344221D9EA300EE091F /* Assets.xcassets */; };
 		2F6F7348221D9EA300EE091F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F7346221D9EA300EE091F /* LaunchScreen.storyboard */; };
-		2F6F7353221D9EA300EE091F /* NinetyNineVIPERTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7352221D9EA300EE091F /* NinetyNineVIPERTests.swift */; };
 		2F6F735E221D9EA300EE091F /* NinetyNineVIPERUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F735D221D9EA300EE091F /* NinetyNineVIPERUITests.swift */; };
+		2F6F736C221D9F5B00EE091F /* CompanyListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F736B221D9F5B00EE091F /* CompanyListPresenterTest.swift */; };
+		2F6F736F221D9F9F00EE091F /* CompanyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F736E221D9F9F00EE091F /* CompanyListPresenter.swift */; };
+		2F6F7371221DA00F00EE091F /* CompanyListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7370221DA00F00EE091F /* CompanyListContract.swift */; };
+		2F6F7374221DA34900EE091F /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7373221DA34900EE091F /* Company.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +45,14 @@
 		2F6F7347221D9EA300EE091F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F6F7349221D9EA300EE091F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F6F734E221D9EA300EE091F /* NinetyNineVIPERTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NinetyNineVIPERTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F6F7352221D9EA300EE091F /* NinetyNineVIPERTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinetyNineVIPERTests.swift; sourceTree = "<group>"; };
 		2F6F7354221D9EA300EE091F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F6F7359221D9EA300EE091F /* NinetyNineVIPERUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NinetyNineVIPERUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F6F735D221D9EA300EE091F /* NinetyNineVIPERUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinetyNineVIPERUITests.swift; sourceTree = "<group>"; };
 		2F6F735F221D9EA300EE091F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F6F736B221D9F5B00EE091F /* CompanyListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListPresenterTest.swift; sourceTree = "<group>"; };
+		2F6F736E221D9F9F00EE091F /* CompanyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListPresenter.swift; sourceTree = "<group>"; };
+		2F6F7370221DA00F00EE091F /* CompanyListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListContract.swift; sourceTree = "<group>"; };
+		2F6F7373221DA34900EE091F /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,8 @@
 		2F6F733C221D9EA000EE091F /* NinetyNineVIPER */ = {
 			isa = PBXGroup;
 			children = (
+				2F6F7372221DA32E00EE091F /* Entities */,
+				2F6F736D221D9F8700EE091F /* CompanyList */,
 				2F6F733D221D9EA000EE091F /* AppDelegate.swift */,
 				2F6F733F221D9EA000EE091F /* ViewController.swift */,
 				2F6F7341221D9EA000EE091F /* Main.storyboard */,
@@ -110,8 +118,8 @@
 		2F6F7351221D9EA300EE091F /* NinetyNineVIPERTests */ = {
 			isa = PBXGroup;
 			children = (
-				2F6F7352221D9EA300EE091F /* NinetyNineVIPERTests.swift */,
 				2F6F7354221D9EA300EE091F /* Info.plist */,
+				2F6F736B221D9F5B00EE091F /* CompanyListPresenterTest.swift */,
 			);
 			path = NinetyNineVIPERTests;
 			sourceTree = "<group>";
@@ -123,6 +131,23 @@
 				2F6F735F221D9EA300EE091F /* Info.plist */,
 			);
 			path = NinetyNineVIPERUITests;
+			sourceTree = "<group>";
+		};
+		2F6F736D221D9F8700EE091F /* CompanyList */ = {
+			isa = PBXGroup;
+			children = (
+				2F6F736E221D9F9F00EE091F /* CompanyListPresenter.swift */,
+				2F6F7370221DA00F00EE091F /* CompanyListContract.swift */,
+			);
+			path = CompanyList;
+			sourceTree = "<group>";
+		};
+		2F6F7372221DA32E00EE091F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				2F6F7373221DA34900EE091F /* Company.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +221,7 @@
 					};
 					2F6F734D221D9EA300EE091F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 2F6F7339221D9EA000EE091F;
 					};
 					2F6F7358221D9EA300EE091F = {
@@ -256,7 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6F736F221D9F9F00EE091F /* CompanyListPresenter.swift in Sources */,
+				2F6F7371221DA00F00EE091F /* CompanyListContract.swift in Sources */,
 				2F6F7340221D9EA000EE091F /* ViewController.swift in Sources */,
+				2F6F7374221DA34900EE091F /* Company.swift in Sources */,
 				2F6F733E221D9EA000EE091F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F6F7353221D9EA300EE091F /* NinetyNineVIPERTests.swift in Sources */,
+				2F6F736C221D9F5B00EE091F /* CompanyListPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +498,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CA2AKZS8UU;
 				INFOPLIST_FILE = NinetyNineVIPERTests/Info.plist;
@@ -479,6 +509,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.santifranco.NinetyNineVIPERTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NinetyNineVIPER.app/NinetyNineVIPER";
@@ -490,6 +521,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CA2AKZS8UU;
 				INFOPLIST_FILE = NinetyNineVIPERTests/Info.plist;
