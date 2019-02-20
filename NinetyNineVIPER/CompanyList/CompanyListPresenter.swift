@@ -38,7 +38,10 @@ extension CompanyListPresenter: CompanyListViewDelegate {
 
 extension CompanyListPresenter: CompanyListInteractorDelegate {
     func didLoadCompanies(_ companies: [Company]) {
-        view.showCompanies(companies)
+        let sortedCompanies = companies.sorted {
+            return $0.sharePrice < $1.sharePrice
+        }
+        view.showCompanies(sortedCompanies)
         view.hideLoading()
     }
     

@@ -64,6 +64,30 @@ class CompanyListPresenterTest: XCTestCase {
         
     }
     
+    func test_show_ordered_companies_when_load_companies_success() {
+        
+        let givenCheaperCompany = Company(id: 1, name: "Apple", ric: "APPL", sharePrice: 123.123)
+        let givenExpensiveCompany = Company(id: 2, name: "Microsoft", ric: "MSFT", sharePrice: 456.345)
+        let givenMidCompany1 = Company(id: 3, name: "Alphabet", ric: "GOOG", sharePrice: 236.345)
+        let givenMidCompany2 = Company(id: 4, name: "Amazon", ric: "AMZN", sharePrice: 389.345)
+        
+        let givenCompanies = [
+            givenExpensiveCompany,
+            givenMidCompany2,
+            givenCheaperCompany,
+            givenMidCompany1
+        ]
+        
+        presenter.didLoadCompanies(givenCompanies)
+        
+        XCTAssertEqual(view.companies[0], givenCheaperCompany)
+        XCTAssertEqual(view.companies[1], givenMidCompany1)
+        XCTAssertEqual(view.companies[2], givenMidCompany2)
+        XCTAssertEqual(view.companies[3], givenExpensiveCompany)
+        
+        
+    }
+    
     func test_hide_loading_when_load_companies_success() {
         let givenCompanies = [
             Company(id: 1, name: "Apple", ric: "APPL", sharePrice: 123.123),
