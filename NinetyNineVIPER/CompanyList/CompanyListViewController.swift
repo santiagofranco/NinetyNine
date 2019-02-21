@@ -35,7 +35,6 @@ class CompanyListViewController: UIViewController {
     fileprivate func showMessage(_ message: String) {
         messageLabel.text = message
         tableView.isHidden = true
-        activityIndicator.isHidden = true
     }
 }
 

@@ -46,6 +46,7 @@ extension CompanyListPresenter: CompanyListInteractorDelegate {
     }
     
     func didLoadCompaniesError(_ error: NNError) {
+        view.hideLoading()
         switch error {
         case .header, .data:
             view.showLoadingCompaniesError()

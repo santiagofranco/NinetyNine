@@ -120,6 +120,14 @@ class CompanyListPresenterTest: XCTestCase {
         XCTAssertTrue(view.showAuthenticationErrorCalled)
         
     }
+    
+    func test_hide_loading_when_load_companies_fails() {
+        
+        presenter.didLoadCompaniesError(.data)
+        
+        XCTAssertTrue(view.hideLoadingCalled)
+        
+    }
 
     func test_open_company_details_when_user_taps_on_some_company() {
         

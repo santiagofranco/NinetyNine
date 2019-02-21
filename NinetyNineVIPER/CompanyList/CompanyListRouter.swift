@@ -18,6 +18,6 @@ class CompanyListRouter: CompanyListRouterProtocol {
     }
     
     func openCompanyDetail(with company: Company) {
-       
+       view.navigationController?.pushViewController(CompanyDetailModule().provide(companyID: company.id), animated: true)
     }
 }
