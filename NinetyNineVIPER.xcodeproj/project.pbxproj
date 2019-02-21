@@ -22,11 +22,18 @@
 		2F6F7386221DB87100EE091F /* AbsNetMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F737F221DB87100EE091F /* AbsNetMethod.swift */; };
 		2F6F7387221DB87100EE091F /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7380221DB87100EE091F /* ApiService.swift */; };
 		2F6F7388221DB87100EE091F /* AbsNetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7381221DB87100EE091F /* AbsNetConfiguration.swift */; };
-		2F6F7389221DB87100EE091F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7382221DB87100EE091F /* Extensions.swift */; };
+		2F6F7389221DB87100EE091F /* AbsNetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7382221DB87100EE091F /* AbsNetExtensions.swift */; };
 		2F6F738A221DB87100EE091F /* AbsNetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7383221DB87100EE091F /* AbsNetError.swift */; };
 		2F6F738B221DB87100EE091F /* ApiUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7384221DB87100EE091F /* ApiUseCase.swift */; };
 		2F6F738C221DB87100EE091F /* AbsNetHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7385221DB87100EE091F /* AbsNetHeader.swift */; };
 		2F6F7391221DB92F00EE091F /* GetCompaniesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7390221DB92F00EE091F /* GetCompaniesUseCase.swift */; };
+		2F6F7394221EC78400EE091F /* CompanyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7392221EC78400EE091F /* CompanyListViewController.swift */; };
+		2F6F7395221EC78400EE091F /* CompanyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F7393221EC78400EE091F /* CompanyListViewController.xib */; };
+		2F6F7397221ECA2100EE091F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7396221ECA2100EE091F /* Extensions.swift */; };
+		2F6F739B221ECA4B00EE091F /* CompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F7399221ECA4B00EE091F /* CompanyTableViewCell.swift */; };
+		2F6F739C221ECA4B00EE091F /* CompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F739A221ECA4B00EE091F /* CompanyTableViewCell.xib */; };
+		2F7EE8B3221ECFCA0042CDBB /* CompanyListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7EE8B2221ECFCA0042CDBB /* CompanyListModule.swift */; };
+		2F7EE8B5221ED0580042CDBB /* CompanyListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7EE8B4221ED0580042CDBB /* CompanyListRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,11 +75,18 @@
 		2F6F737F221DB87100EE091F /* AbsNetMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsNetMethod.swift; sourceTree = "<group>"; };
 		2F6F7380221DB87100EE091F /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		2F6F7381221DB87100EE091F /* AbsNetConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsNetConfiguration.swift; sourceTree = "<group>"; };
-		2F6F7382221DB87100EE091F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2F6F7382221DB87100EE091F /* AbsNetExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsNetExtensions.swift; sourceTree = "<group>"; };
 		2F6F7383221DB87100EE091F /* AbsNetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsNetError.swift; sourceTree = "<group>"; };
 		2F6F7384221DB87100EE091F /* ApiUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUseCase.swift; sourceTree = "<group>"; };
 		2F6F7385221DB87100EE091F /* AbsNetHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsNetHeader.swift; sourceTree = "<group>"; };
 		2F6F7390221DB92F00EE091F /* GetCompaniesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCompaniesUseCase.swift; sourceTree = "<group>"; };
+		2F6F7392221EC78400EE091F /* CompanyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListViewController.swift; sourceTree = "<group>"; };
+		2F6F7393221EC78400EE091F /* CompanyListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyListViewController.xib; sourceTree = "<group>"; };
+		2F6F7396221ECA2100EE091F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2F6F7399221ECA4B00EE091F /* CompanyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableViewCell.swift; sourceTree = "<group>"; };
+		2F6F739A221ECA4B00EE091F /* CompanyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyTableViewCell.xib; sourceTree = "<group>"; };
+		2F7EE8B2221ECFCA0042CDBB /* CompanyListModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListModule.swift; sourceTree = "<group>"; };
+		2F7EE8B4221ED0580042CDBB /* CompanyListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +147,7 @@
 				2F6F7344221D9EA300EE091F /* Assets.xcassets */,
 				2F6F7346221D9EA300EE091F /* LaunchScreen.storyboard */,
 				2F6F7349221D9EA300EE091F /* Info.plist */,
+				2F6F7396221ECA2100EE091F /* Extensions.swift */,
 			);
 			path = NinetyNineVIPER;
 			sourceTree = "<group>";
@@ -158,9 +173,14 @@
 		2F6F736D221D9F8700EE091F /* CompanyList */ = {
 			isa = PBXGroup;
 			children = (
+				2F6F7398221ECA3300EE091F /* Cell */,
 				2F6F736E221D9F9F00EE091F /* CompanyListPresenter.swift */,
 				2F6F7370221DA00F00EE091F /* CompanyListContract.swift */,
 				2F6F7377221DB23800EE091F /* CompanyListInteractor.swift */,
+				2F6F7392221EC78400EE091F /* CompanyListViewController.swift */,
+				2F6F7393221EC78400EE091F /* CompanyListViewController.xib */,
+				2F7EE8B2221ECFCA0042CDBB /* CompanyListModule.swift */,
+				2F7EE8B4221ED0580042CDBB /* CompanyListRouter.swift */,
 			);
 			path = CompanyList;
 			sourceTree = "<group>";
@@ -183,7 +203,7 @@
 				2F6F737F221DB87100EE091F /* AbsNetMethod.swift */,
 				2F6F7380221DB87100EE091F /* ApiService.swift */,
 				2F6F7384221DB87100EE091F /* ApiUseCase.swift */,
-				2F6F7382221DB87100EE091F /* Extensions.swift */,
+				2F6F7382221DB87100EE091F /* AbsNetExtensions.swift */,
 			);
 			path = AbsNet;
 			sourceTree = "<group>";
@@ -194,6 +214,15 @@
 				2F6F7390221DB92F00EE091F /* GetCompaniesUseCase.swift */,
 			);
 			path = APIClient;
+			sourceTree = "<group>";
+		};
+		2F6F7398221ECA3300EE091F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2F6F7399221ECA4B00EE091F /* CompanyTableViewCell.swift */,
+				2F6F739A221ECA4B00EE091F /* CompanyTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +330,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6F7395221EC78400EE091F /* CompanyListViewController.xib in Resources */,
 				2F6F7348221D9EA300EE091F /* LaunchScreen.storyboard in Resources */,
+				2F6F739C221ECA4B00EE091F /* CompanyTableViewCell.xib in Resources */,
 				2F6F7345221D9EA300EE091F /* Assets.xcassets in Resources */,
 				2F6F7343221D9EA000EE091F /* Main.storyboard in Resources */,
 			);
@@ -330,18 +361,23 @@
 			files = (
 				2F6F7376221DAAEA00EE091F /* NNError.swift in Sources */,
 				2F6F738C221DB87100EE091F /* AbsNetHeader.swift in Sources */,
+				2F7EE8B5221ED0580042CDBB /* CompanyListRouter.swift in Sources */,
 				2F6F7388221DB87100EE091F /* AbsNetConfiguration.swift in Sources */,
+				2F7EE8B3221ECFCA0042CDBB /* CompanyListModule.swift in Sources */,
 				2F6F738B221DB87100EE091F /* ApiUseCase.swift in Sources */,
 				2F6F736F221D9F9F00EE091F /* CompanyListPresenter.swift in Sources */,
 				2F6F7371221DA00F00EE091F /* CompanyListContract.swift in Sources */,
 				2F6F7386221DB87100EE091F /* AbsNetMethod.swift in Sources */,
+				2F6F739B221ECA4B00EE091F /* CompanyTableViewCell.swift in Sources */,
 				2F6F7391221DB92F00EE091F /* GetCompaniesUseCase.swift in Sources */,
 				2F6F7378221DB23800EE091F /* CompanyListInteractor.swift in Sources */,
 				2F6F7387221DB87100EE091F /* ApiService.swift in Sources */,
 				2F6F738A221DB87100EE091F /* AbsNetError.swift in Sources */,
 				2F6F7340221D9EA000EE091F /* ViewController.swift in Sources */,
+				2F6F7394221EC78400EE091F /* CompanyListViewController.swift in Sources */,
 				2F6F7374221DA34900EE091F /* Company.swift in Sources */,
-				2F6F7389221DB87100EE091F /* Extensions.swift in Sources */,
+				2F6F7397221ECA2100EE091F /* Extensions.swift in Sources */,
+				2F6F7389221DB87100EE091F /* AbsNetExtensions.swift in Sources */,
 				2F6F733E221D9EA000EE091F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

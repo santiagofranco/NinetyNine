@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompanyListViewController" customModule="NinetyNineVIPER" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="k0e-Qg-lMy" id="rgo-2K-py1"/>
+                <outlet property="messageLabel" destination="wzh-dW-kh0" id="Dqm-EC-iXu"/>
+                <outlet property="tableView" destination="RKM-Ff-a9p" id="Bpr-dl-dpe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" sectionIndexMinimumDisplayRowCount="-2" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RKM-Ff-a9p">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="k0e-Qg-lMy">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="83k-Uz-3up"/>
+                        <constraint firstAttribute="width" constant="20" id="sS7-rr-zrv"/>
+                    </constraints>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzh-dW-kh0">
+                    <rect key="frame" x="10" y="762" width="394" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="td3-wp-KRM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="k0e-Qg-lMy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2Ev-3x-WSf"/>
+                <constraint firstItem="RKM-Ff-a9p" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Lc9-XE-Ixs"/>
+                <constraint firstItem="k0e-Qg-lMy" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Mvv-Nb-edb"/>
+                <constraint firstItem="wzh-dW-kh0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QhY-0R-69c"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wzh-dW-kh0" secondAttribute="bottom" constant="50" id="eLK-Jj-jwz"/>
+                <constraint firstAttribute="bottom" secondItem="RKM-Ff-a9p" secondAttribute="bottom" id="g7v-1r-iAM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wzh-dW-kh0" secondAttribute="trailing" constant="10" id="gQ5-9a-Q2L"/>
+                <constraint firstItem="RKM-Ff-a9p" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gYl-tZ-foF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RKM-Ff-a9p" secondAttribute="trailing" id="ige-XM-5nZ"/>
+                <constraint firstItem="wzh-dW-kh0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="vhY-ka-YuF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
