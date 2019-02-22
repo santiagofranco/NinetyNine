@@ -8,6 +8,13 @@
 
 import UIKit
 
+/**
+ This class manages interface logic and user inputs.
+ 
+ We use a protocol for this class, because we are injecting this implementation in the presenter.
+ We can change easily this implementation without break nothing.
+ */
+
 class CompanyDetailViewController: UIViewController {
     
     @IBOutlet weak var dataContainer: UIView!

@@ -9,6 +9,13 @@
 import Foundation
 import UIKit
 
+/**
+ This class makes the navigation to other screens.
+ 
+ We use a protocol for this class, because we are injecting this implementation in the presenter.
+ We can change easily this implementation without break nothing.
+ */
+
 class CompanyListRouter: CompanyListRouterProtocol {
     
     let view: CompanyListViewController
