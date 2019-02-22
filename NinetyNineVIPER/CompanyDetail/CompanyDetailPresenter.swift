@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import RxSwift
 
 class CompanyDetailPresenter {
     
     let view: CompanyDetailView
     let interactor: CompanyDetailInteractorProtocol
     let companyID: Int
+    let disposeBag = DisposeBag()
     
     init(view: CompanyDetailView, interactor: CompanyDetailInteractorProtocol, companyID: Int) {
         self.view = view
@@ -20,7 +22,6 @@ class CompanyDetailPresenter {
         self.companyID = companyID
         
         self.view.delegate = self
-        self.interactor.delegate = self
     }
     
 }
@@ -30,23 +31,24 @@ extension CompanyDetailPresenter: CompanyDetailViewDelegate {
     func viewDidLoad() {
         view.showLoading()
         interactor.loadCompany(with: companyID)
+            .subscribe { (event) in
+                switch event {
+                case .next(let company):
+                    self.view.hideLoading()
+                    self.view.showCompany(company)
+                    return
+                case .error:
+                    self.view.showErrorLoadCompany()
+                    self.view.hideLoading()
+                    return
+                default:
+                    return
+                }
+        }.disposed(by: disposeBag)
     }
     
     func viewWillDisappear() {
         interactor.stopRefreshProcess()
     }
     
-}
-
-extension CompanyDetailPresenter: CompanyDetailInteractorDelegate {
-    func didLoadCompany(_ company: Company) {
-        view.hideLoading()
-        view.showCompany(company)
-        interactor.runRefreshProcess()
-    }
-    
-    func didLoadCompanyError(_ error: NNError) {
-        view.showErrorLoadCompany()
-        view.hideLoading()
-    }
 }

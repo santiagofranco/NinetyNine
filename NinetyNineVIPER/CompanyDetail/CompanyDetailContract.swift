@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol CompanyDetailView: class {
     var delegate: CompanyDetailViewDelegate? { get set }
@@ -23,14 +24,8 @@ protocol CompanyDetailViewDelegate: class {
 }
 
 protocol CompanyDetailInteractorProtocol: class {
-    var delegate: CompanyDetailInteractorDelegate? { get set }
     
-    func loadCompany(with id: Int)
-    func runRefreshProcess()
+    func loadCompany(with id: Int) -> Observable<Company>
     func stopRefreshProcess()
 }
 
-protocol CompanyDetailInteractorDelegate: class {
-    func didLoadCompany(_ company: Company)
-    func didLoadCompanyError(_ error: NNError)
-}

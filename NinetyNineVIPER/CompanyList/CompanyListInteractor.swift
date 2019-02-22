@@ -20,6 +20,7 @@ class CompanyListInteractor: CompanyListInteractorProtocol {
                 
                 guard let companiesOutput = companiesOutput else {
                     observer.onError(NNError.data)
+                    observer.onCompleted()
                     return
                 }
                 
@@ -38,6 +39,7 @@ class CompanyListInteractor: CompanyListInteractorProtocol {
             
             self.getCompaniesUseCase.failure = { error in
                 observer.onError(NNError.data)
+                observer.onCompleted()
             }
             
             self.getCompaniesUseCase.execute()

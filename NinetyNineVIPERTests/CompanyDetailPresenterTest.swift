@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import RxSwift
+import RxTest
 @testable import NinetyNineVIPER
 
 class CompanyDetailPresenterTest: XCTestCase {
@@ -56,7 +58,12 @@ class CompanyDetailPresenterTest: XCTestCase {
         
         let givenCompany = Company(id: 1, name: "Apple", ric: "APPL", sharePrice: 123.123, description: "lorem ipsum", country: "EEUU")
         
-        presenter.didLoadCompany(givenCompany)
+        interactor.observable = Observable.create { observer -> Disposable in
+            observer.onNext(givenCompany)
+            return Disposables.create()
+        }
+        
+        presenter.viewDidLoad()
         
         XCTAssertTrue(view.hideLoadingCalled)
         
@@ -66,25 +73,27 @@ class CompanyDetailPresenterTest: XCTestCase {
         
         let givenCompany = Company(id: 1, name: "Apple", ric: "APPL", sharePrice: 123.123, description: "lorem ipsum", country: "EEUU")
         
-        presenter.didLoadCompany(givenCompany)
+        interactor.observable = Observable.create { observer -> Disposable in
+            observer.onNext(givenCompany)
+            return Disposables.create()
+        }
+        
+        presenter.viewDidLoad()
         
         XCTAssertTrue(view.showCompanyCalled)
         XCTAssertEqual(view.company, givenCompany)
     }
     
-    func test_start_refreshing_company_process_when_load_company_success() {
-        
-        let givenCompany = Company(id: 1, name: "Apple", ric: "APPL", sharePrice: 123.123, description: "lorem ipsum", country: "EEUU")
-        
-        presenter.didLoadCompany(givenCompany)
-     
-        XCTAssertTrue(interactor.runRefreshProcessCalled)
-        
-    }
-    
     func test_show_error_loading_company_when_load_company_fails() {
         
-        presenter.didLoadCompanyError(.data)
+        let givenError: NNError = .data
+        
+        interactor.observable = Observable.create { observer -> Disposable in
+            observer.onError(givenError)
+            return Disposables.create()
+        }
+        
+        presenter.viewDidLoad()
         
         XCTAssertTrue(view.showErrorLoadCompanyCalled)
         
@@ -92,7 +101,14 @@ class CompanyDetailPresenterTest: XCTestCase {
     
     func test_hide_loading_when_load_company_fails() {
         
-        presenter.didLoadCompanyError(.data)
+        let givenError: NNError = .data
+        
+        interactor.observable = Observable.create { observer -> Disposable in
+            observer.onError(givenError)
+            return Disposables.create()
+        }
+        
+        presenter.viewDidLoad()
         
         XCTAssertTrue(view.hideLoadingCalled)
     }
@@ -133,20 +149,20 @@ class CompanyDetailPresenterTest: XCTestCase {
     }
     
     private class MockCompanyDetailInteractor: CompanyDetailInteractorProtocol {
-        var delegate: CompanyDetailInteractorDelegate?
+        
+        var observable: Observable<Company> = Observable.create { observer -> Disposable in
+            observer.onCompleted()
+            return Disposables.create()
+        }
         
         var loadCompanyCalled = false
         var loadCompanyID: Int? = nil
-        var runRefreshProcessCalled = false
         var stopRefreshProcessCalled = false
         
-        func loadCompany(with id: Int) {
+        func loadCompany(with id: Int) -> Observable<Company>{
             loadCompanyCalled = true
             loadCompanyID = id
-        }
-        
-        func runRefreshProcess() {
-            runRefreshProcessCalled = true
+            return observable
         }
         
         func stopRefreshProcess() {

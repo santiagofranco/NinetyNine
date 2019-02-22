@@ -11,74 +11,59 @@ import RxSwift
 
 class CompanyDetailInteractor: CompanyDetailInteractorProtocol {
     
-    var delegate: CompanyDetailInteractorDelegate?
+    private let getCompanyUseCase = GetCompanyDetailUseCase()
+    private var currentId: Int? = nil
+    private var shouldRefresh = true
+    private let disposeBag = DisposeBag()
     
-    let getCompanyUseCase = GetCompanyDetailUseCase()
-    var refreshCompanyTimer: Observable<NSInteger>?
-    var disposeBag: DisposeBag? = nil
-    var currentId: Int? = nil
-    
-    func loadCompany(with id: Int) {
+    func loadCompany(with id: Int) -> Observable<Company> {
         self.currentId = id
-        getCompanyUseCase.input = GetCompanyDetailInput(id: id)
-        
-        getCompanyUseCase.success = { companyOutput in
-            guard let output = companyOutput else {
-                self.delegate?.didLoadCompanyError(.data)
-                return
-            }
-            
-            let company = Company(id: output.id,
-                                  name: output.name,
-                                  ric: output.ric,
-                                  sharePrice: output.sharePrice,
-                                  description: output.description,
-                                  country: output.country)
-            
-            self.delegate?.didLoadCompany(company)
-        }
-        
-        getCompanyUseCase.failure = { _ in
-            //We should map API error to corresponding business logic
-            //.data is just an example
-            self.delegate?.didLoadCompanyError(.data)
-        }
-        
-        getCompanyUseCase.execute()
-        
+        return refreshCompany()
     }
     
-    func runRefreshProcess() {
-        
-        guard let companyID = self.currentId else {
-            return
-        }
-        
-        guard refreshCompanyTimer == nil else {
-            return
-        }
-        
-        disposeBag = DisposeBag()
-        refreshCompanyTimer = Observable<NSInteger>.interval(3, scheduler: MainScheduler.instance)
-        
-        refreshCompanyTimer!
-            .subscribe { (event) in
-                
-                switch event {
-                case .next:
-                    self.loadCompany(with: companyID)
-                    return
-                default:
-                    return
+    fileprivate func refreshCompany() -> Observable<Company> {
+       return Observable<Int>.interval(3.0, scheduler: MainScheduler.instance)
+            .takeWhile { _ in return self.shouldRefresh }
+            .startWith(0)
+            .flatMap { _ in
+                Observable.create { observer -> Disposable in
                     
+                    guard let companyID = self.currentId else {
+                        observer.onError(NNError.data)
+                        return Disposables.create()
+                    }
+                    
+                    self.getCompanyUseCase.input = GetCompanyDetailInput(id: companyID)
+                    
+                    self.getCompanyUseCase.success = { companyOutput in
+                        guard let output = companyOutput else {
+                            return
+                        }
+                        
+                        let company = Company(id: output.id,
+                                              name: output.name,
+                                              ric: output.ric,
+                                              sharePrice: output.sharePrice,
+                                              description: output.description,
+                                              country: output.country)
+                        
+                        observer.onNext(company)
+                        
+                    }
+                    
+                    self.getCompanyUseCase.failure = { _ in
+                        observer.onError(NNError.data)
+                    }
+                    
+                    self.getCompanyUseCase.execute()
+                    return Disposables.create()
+                }
             }
-        }.disposed(by: disposeBag!)
-        
-        
+
     }
     
     func stopRefreshProcess() {
-        disposeBag = nil
+        shouldRefresh = false
     }
     
 }
