@@ -7,42 +7,43 @@
 //
 
 import Foundation
+import RxSwift
 
 class CompanyListInteractor: CompanyListInteractorProtocol {
     
-    var delegate: CompanyListInteractorDelegate?
-    
     let getCompaniesUseCase = GetCompaniesUseCase()
     
-    func loadCompanies() {
-        
-        getCompaniesUseCase.success = { companiesOutput in
-         
-            guard let companiesOutput = companiesOutput else {
-                self.delegate?.didLoadCompaniesError(.data)
-                return
+    func loadCompanies() -> Observable<[Company]> {
+        return Observable.create { observer -> Disposable in
+            
+            self.getCompaniesUseCase.success = { companiesOutput in
+                
+                guard let companiesOutput = companiesOutput else {
+                    observer.onError(NNError.data)
+                    return
+                }
+                
+                let companies = companiesOutput.map { output in
+                    return Company(
+                        id: output.id,
+                        name: output.name,
+                        ric: output.ric,
+                        sharePrice: output.sharePrice
+                    )
+                }
+                
+                observer.on(.next(companies))
+                observer.onCompleted()
             }
             
-            let companies = companiesOutput.compactMap { output in
-                return Company(
-                    id: output.id,
-                    name: output.name,
-                    ric: output.ric,
-                    sharePrice: output.sharePrice
-                )
+            self.getCompaniesUseCase.failure = { error in
+                observer.onError(NNError.data)
             }
-            self.delegate?.didLoadCompanies(companies)
-        }
-        
-        getCompaniesUseCase.failure = { error in
             
-            //We should map API error to corresponding business logic
-            //.data is just an example
-            self.delegate?.didLoadCompaniesError(.data)
+            self.getCompaniesUseCase.execute()
+            
+            return Disposables.create()
         }
-        
-        getCompaniesUseCase.execute()
-        
     }
     
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum NNError {
+enum NNError: Error {
     case data
     case header
     case authentication

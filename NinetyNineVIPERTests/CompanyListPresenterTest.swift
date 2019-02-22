@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import RxSwift
+import RxTest
 @testable import NinetyNineVIPER
 
 class CompanyListPresenterTest: XCTestCase {
@@ -19,10 +21,17 @@ class CompanyListPresenterTest: XCTestCase {
     private var view: MockCompanyListView!
     private var router: MockCompnayListRouter!
     
+    //RX
+    var scheduler: TestScheduler!
+    var disposeBag: DisposeBag!
+    
     override func setUp() {
         
+        scheduler = TestScheduler(initialClock: 0)
+        disposeBag = DisposeBag()
+        
         view = MockCompanyListView()
-        interactor = MockCompanyListInteractor()
+        interactor = MockCompanyListInteractor(scheduler: scheduler)
         router = MockCompnayListRouter()
         
         presenter = CompanyListPresenter(view: view, interactor: interactor, router: router)
@@ -57,7 +66,12 @@ class CompanyListPresenterTest: XCTestCase {
             Company(id: 2, name: "Microsoft", ric: "MSFT", sharePrice: 456.345)
         ]
         
-        presenter.didLoadCompanies(givenCompanies)
+        interactor.observable = Observable.create { observer -> Disposable in
+            observer.onNext(givenCompanies)
+            return Disposables.create()
+        }
+        
+        presenter.viewDidLoad()
         
         XCTAssertTrue(view.showCompaniesCalled)
         XCTAssertEqual(view.companies.count, givenCompanies.count)
@@ -78,7 +92,12 @@ class CompanyListPresenterTest: XCTestCase {
             givenMidCompany1
         ]
         
-        presenter.didLoadCompanies(givenCompanies)
+        interactor.observable = Observable.create { observer -> Disposable in
+            observer.onNext(givenCompanies)
+            return Disposables.create()
+        }
+        
+        presenter.viewDidLoad()
         
         XCTAssertEqual(view.companies[0], givenCheaperCompany)
         XCTAssertEqual(view.companies[1], givenMidCompany1)
@@ -94,7 +113,12 @@ class CompanyListPresenterTest: XCTestCase {
             Company(id: 2, name: "Microsoft", ric: "MSFT", sharePrice: 456.345)
         ]
         
-        presenter.didLoadCompanies(givenCompanies)
+        interactor.observable = Observable.create { observer -> Disposable in
+            observer.onNext(givenCompanies)
+            return Disposables.create()
+        }
+        
+        presenter.viewDidLoad()
         
         XCTAssertTrue(view.hideLoadingCalled)
         
@@ -104,7 +128,12 @@ class CompanyListPresenterTest: XCTestCase {
         
         let givenError: NNError = .header
         
-        presenter.didLoadCompaniesError(givenError)
+        interactor.observable = Observable.create { observer -> Disposable in
+            observer.onError(givenError)
+            return Disposables.create()
+        }
+        
+        presenter.viewDidLoad()
         
         XCTAssertTrue(view.showLoadingCompaniesErrorCalled)
         
@@ -115,7 +144,12 @@ class CompanyListPresenterTest: XCTestCase {
         
         let givenError: NNError = .authentication
         
-        presenter.didLoadCompaniesError(givenError)
+        interactor.observable = Observable.create { observer -> Disposable in
+            observer.onError(givenError)
+            return Disposables.create()
+        }
+        
+        presenter.viewDidLoad()
         
         XCTAssertTrue(view.showAuthenticationErrorCalled)
         
@@ -123,7 +157,14 @@ class CompanyListPresenterTest: XCTestCase {
     
     func test_hide_loading_when_load_companies_fails() {
         
-        presenter.didLoadCompaniesError(.data)
+        let givenError: NNError = .data
+        
+        interactor.observable = Observable.create { observer -> Disposable in
+            observer.onError(givenError)
+            return Disposables.create()
+        }
+        
+        presenter.viewDidLoad()
         
         XCTAssertTrue(view.hideLoadingCalled)
         
@@ -174,13 +215,26 @@ class CompanyListPresenterTest: XCTestCase {
     }
     
     private class MockCompanyListInteractor: CompanyListInteractorProtocol {
-        var delegate: CompanyListInteractorDelegate?
+       
+        let scheduler: TestScheduler
         
+        var observable: Observable<[Company]> = Observable.create { observer -> Disposable in
+            observer.onCompleted()
+            return Disposables.create()
+        }
         var loadCompaniesCalled = false
         
-        func loadCompanies() {
-            loadCompaniesCalled = true
+        init(scheduler: TestScheduler) {
+            self.scheduler = scheduler
         }
+        
+        func loadCompanies() -> Observable<[Company]> {
+            loadCompaniesCalled = true
+            return observable
+        }
+        
+        
+
     }
     
     private class MockCompnayListRouter: CompanyListRouterProtocol {

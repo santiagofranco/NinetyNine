@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol CompanyListView: class {
     var delegate: CompanyListViewDelegate? { get set }
@@ -24,15 +25,8 @@ protocol CompanyListViewDelegate: class {
 }
 
 protocol CompanyListInteractorProtocol: class {
-    var delegate: CompanyListInteractorDelegate? { get set }
+    func loadCompanies() -> Observable<[Company]>
     
-    func loadCompanies()
-    
-}
-
-protocol CompanyListInteractorDelegate: class {
-    func didLoadCompanies(_ companies: [Company])
-    func didLoadCompaniesError(_ error: NNError)
 }
 
 protocol CompanyListRouterProtocol: class {
