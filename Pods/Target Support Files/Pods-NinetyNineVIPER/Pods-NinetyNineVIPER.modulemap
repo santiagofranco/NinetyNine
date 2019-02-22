@@ -1,0 +1,6 @@
+framework module Pods_NinetyNineVIPER {
+  umbrella header "Pods-NinetyNineVIPER-umbrella.h"
+
+  export *
+  module * { export * }
+}

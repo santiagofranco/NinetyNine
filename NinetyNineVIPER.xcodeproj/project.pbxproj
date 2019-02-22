@@ -40,6 +40,8 @@
 		2F7EE8C3221F0A2B0042CDBB /* CompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7EE8C1221F0A2B0042CDBB /* CompanyDetailViewController.swift */; };
 		2F7EE8C4221F0A2B0042CDBB /* CompanyDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7EE8C2221F0A2B0042CDBB /* CompanyDetailViewController.xib */; };
 		2F7EE8C6221F11A10042CDBB /* CompanyDetailModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7EE8C5221F11A10042CDBB /* CompanyDetailModule.swift */; };
+		2FD7EF54FEDF4BC0C38D7E24 /* Pods_NinetyNineVIPERTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4FFD349383EAEC36AD6AA /* Pods_NinetyNineVIPERTests.framework */; };
+		F1F78EAAE881264691AFD845 /* Pods_NinetyNineVIPER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 677DCE14F706A622E8C8E424 /* Pods_NinetyNineVIPER.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00B4FFD349383EAEC36AD6AA /* Pods_NinetyNineVIPERTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NinetyNineVIPERTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B7C8A33665F712CC5443142 /* Pods-NinetyNineVIPER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NinetyNineVIPER.debug.xcconfig"; path = "Target Support Files/Pods-NinetyNineVIPER/Pods-NinetyNineVIPER.debug.xcconfig"; sourceTree = "<group>"; };
 		2F6F733A221D9EA000EE091F /* NinetyNineVIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NinetyNineVIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F6F733D221D9EA000EE091F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F6F7344221D9EA300EE091F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +103,10 @@
 		2F7EE8C1221F0A2B0042CDBB /* CompanyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailViewController.swift; sourceTree = "<group>"; };
 		2F7EE8C2221F0A2B0042CDBB /* CompanyDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyDetailViewController.xib; sourceTree = "<group>"; };
 		2F7EE8C5221F11A10042CDBB /* CompanyDetailModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailModule.swift; sourceTree = "<group>"; };
+		677DCE14F706A622E8C8E424 /* Pods_NinetyNineVIPER.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NinetyNineVIPER.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9488C3489E3AD66F6FF37F5D /* Pods-NinetyNineVIPERTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NinetyNineVIPERTests.debug.xcconfig"; path = "Target Support Files/Pods-NinetyNineVIPERTests/Pods-NinetyNineVIPERTests.debug.xcconfig"; sourceTree = "<group>"; };
+		982D76B1249999952BEBEFD2 /* Pods-NinetyNineVIPERTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NinetyNineVIPERTests.release.xcconfig"; path = "Target Support Files/Pods-NinetyNineVIPERTests/Pods-NinetyNineVIPERTests.release.xcconfig"; sourceTree = "<group>"; };
+		CCC0857B652F0892ADEAB3C1 /* Pods-NinetyNineVIPER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NinetyNineVIPER.release.xcconfig"; path = "Target Support Files/Pods-NinetyNineVIPER/Pods-NinetyNineVIPER.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F78EAAE881264691AFD845 /* Pods_NinetyNineVIPER.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FD7EF54FEDF4BC0C38D7E24 /* Pods_NinetyNineVIPERTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +136,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B80F2CEBA3A48CED5D51759 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1B7C8A33665F712CC5443142 /* Pods-NinetyNineVIPER.debug.xcconfig */,
+				CCC0857B652F0892ADEAB3C1 /* Pods-NinetyNineVIPER.release.xcconfig */,
+				9488C3489E3AD66F6FF37F5D /* Pods-NinetyNineVIPERTests.debug.xcconfig */,
+				982D76B1249999952BEBEFD2 /* Pods-NinetyNineVIPERTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2F6F7331221D9EA000EE091F = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +155,8 @@
 				2F6F7351221D9EA300EE091F /* NinetyNineVIPERTests */,
 				2F6F735C221D9EA300EE091F /* NinetyNineVIPERUITests */,
 				2F6F733B221D9EA000EE091F /* Products */,
+				1B80F2CEBA3A48CED5D51759 /* Pods */,
+				B133CC6F4B776BF14F47AD04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,6 +275,15 @@
 			path = CompanyDetail;
 			sourceTree = "<group>";
 		};
+		B133CC6F4B776BF14F47AD04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				677DCE14F706A622E8C8E424 /* Pods_NinetyNineVIPER.framework */,
+				00B4FFD349383EAEC36AD6AA /* Pods_NinetyNineVIPERTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,9 +291,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F6F7362221D9EA300EE091F /* Build configuration list for PBXNativeTarget "NinetyNineVIPER" */;
 			buildPhases = (
+				7A6AB6603B654AF94F077A3B /* [CP] Check Pods Manifest.lock */,
 				2F6F7336221D9EA000EE091F /* Sources */,
 				2F6F7337221D9EA000EE091F /* Frameworks */,
 				2F6F7338221D9EA000EE091F /* Resources */,
+				E9B1D41DD526BCC2E18BEE4E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -275,9 +310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F6F7365221D9EA300EE091F /* Build configuration list for PBXNativeTarget "NinetyNineVIPERTests" */;
 			buildPhases = (
+				0C58D94148B0194719B5BCF1 /* [CP] Check Pods Manifest.lock */,
 				2F6F734A221D9EA300EE091F /* Sources */,
 				2F6F734B221D9EA300EE091F /* Frameworks */,
 				2F6F734C221D9EA300EE091F /* Resources */,
+				BEA42C5E35CE8DE9D5492E60 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,6 +416,107 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C58D94148B0194719B5BCF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NinetyNineVIPERTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A6AB6603B654AF94F077A3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NinetyNineVIPER-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEA42C5E35CE8DE9D5492E60 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NinetyNineVIPERTests/Pods-NinetyNineVIPERTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NinetyNineVIPERTests/Pods-NinetyNineVIPERTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9B1D41DD526BCC2E18BEE4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NinetyNineVIPER/Pods-NinetyNineVIPER-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NinetyNineVIPER/Pods-NinetyNineVIPER-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2F6F7336221D9EA000EE091F /* Sources */ = {
@@ -575,6 +713,7 @@
 		};
 		2F6F7363221D9EA300EE091F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7C8A33665F712CC5443142 /* Pods-NinetyNineVIPER.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -597,6 +736,7 @@
 		};
 		2F6F7364221D9EA300EE091F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCC0857B652F0892ADEAB3C1 /* Pods-NinetyNineVIPER.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -619,6 +759,7 @@
 		};
 		2F6F7366221D9EA300EE091F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9488C3489E3AD66F6FF37F5D /* Pods-NinetyNineVIPERTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -642,6 +783,7 @@
 		};
 		2F6F7367221D9EA300EE091F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 982D76B1249999952BEBEFD2 /* Pods-NinetyNineVIPERTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class CompanyListViewController: UIViewController {
     
@@ -15,21 +17,52 @@ class CompanyListViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     
     var delegate: CompanyListViewDelegate?
-    var companies: [Company] = []
+    let companiesDataSource = Variable<[Company]>([])
+    
+    //RX
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.registerCell(with: CompanyTableViewCell.identifier)
-        tableView.tableFooterView = UIView()
-        tableView.backgroundColor = .clear
-        tableView.separatorStyle = .singleLine
+        setupTableView()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Companies"
         
         delegate?.viewDidLoad()
+    }
+    
+    fileprivate func setupTableView() {
+        
+        tableView.registerCell(with: CompanyTableViewCell.identifier)
+        tableView.tableFooterView = UIView()
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .singleLine
+        setupDataSource()
+        setupItemSelected()
+        
+    }
+    
+    fileprivate func setupDataSource() {
+        companiesDataSource
+            .asObservable()
+            .bind(to: tableView.rx.items(cellIdentifier: CompanyTableViewCell.identifier)){ row,company,cell in
+                guard let cell = cell as? CompanyTableViewCell else {
+                    return
+                }
+                cell.bind(company: company)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    fileprivate func setupItemSelected() {
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let company = self?.companiesDataSource.value[safe: indexPath.row] else {
+                    return
+                }
+                self?.delegate?.didTap(company: company)
+            }).disposed(by: disposeBag)
     }
     
     fileprivate func showMessage(_ message: String) {
@@ -46,8 +79,7 @@ extension CompanyListViewController: CompanyListView {
     }
     
     func showCompanies(_ companies: [Company]) {
-        self.companies = companies
-        tableView.reloadData()
+        self.companiesDataSource.value = companies
     }
     
     func hideLoading() {
@@ -61,31 +93,5 @@ extension CompanyListViewController: CompanyListView {
     
     func showAuthenticationError() {
         showMessage("You should be authenticated to load companies")
-    }
-    
-    
-}
-
-extension CompanyListViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return companies.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell: CompanyTableViewCell = tableView.dequeue(at: indexPath, identifier: CompanyTableViewCell.identifier)
-        
-        cell.bind(company: companies[indexPath.row])
-        
-        return cell
-        
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didTap(company: companies[indexPath.row])
     }
 }
