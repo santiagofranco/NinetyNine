@@ -19,6 +19,7 @@ protocol CompanyDetailView: class {
 
 protocol CompanyDetailViewDelegate: class {
     func viewDidLoad()
+    func viewWillDisappear()
 }
 
 protocol CompanyDetailInteractorProtocol: class {
@@ -26,6 +27,7 @@ protocol CompanyDetailInteractorProtocol: class {
     
     func loadCompany(with id: Int)
     func runRefreshProcess()
+    func stopRefreshProcess()
 }
 
 protocol CompanyDetailInteractorDelegate: class {

@@ -32,6 +32,10 @@ extension CompanyDetailPresenter: CompanyDetailViewDelegate {
         interactor.loadCompany(with: companyID)
     }
     
+    func viewWillDisappear() {
+        interactor.stopRefreshProcess()
+    }
+    
 }
 
 extension CompanyDetailPresenter: CompanyDetailInteractorDelegate {

@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import RxSwift
 
 class CompanyDetailInteractor: CompanyDetailInteractorProtocol {
     
     var delegate: CompanyDetailInteractorDelegate?
     
     let getCompanyUseCase = GetCompanyDetailUseCase()
-    var refreshCompanyTimer: Timer? = nil
+    var refreshCompanyTimer: Observable<NSInteger>?
+    var disposeBag: DisposeBag? = nil
     var currentId: Int? = nil
     
     func loadCompany(with id: Int) {
@@ -52,15 +54,31 @@ class CompanyDetailInteractor: CompanyDetailInteractorProtocol {
             return
         }
         
-        if self.refreshCompanyTimer?.isValid ?? false {
+        guard refreshCompanyTimer == nil else {
             return
         }
         
-        self.refreshCompanyTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { _ in
-            self.loadCompany(with: companyID)
-        })
+        disposeBag = DisposeBag()
+        refreshCompanyTimer = Observable<NSInteger>.interval(3, scheduler: MainScheduler.instance)
+        
+        refreshCompanyTimer!
+            .subscribe { (event) in
+                
+                switch event {
+                case .next:
+                    self.loadCompany(with: companyID)
+                    return
+                default:
+                    return
+                    
+            }
+        }.disposed(by: disposeBag!)
         
         
+    }
+    
+    func stopRefreshProcess() {
+        disposeBag = nil
     }
     
 }

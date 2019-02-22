@@ -97,6 +97,14 @@ class CompanyDetailPresenterTest: XCTestCase {
         XCTAssertTrue(view.hideLoadingCalled)
     }
     
+    func test_stop_refresh_company_timer_when_view_will_disappear() {
+        
+        presenter.viewWillDisappear()
+        
+        XCTAssertTrue(interactor.stopRefreshProcessCalled)
+        
+    }
+    
     private class MockCompanyDetailView: CompanyDetailView {
         var delegate: CompanyDetailViewDelegate?
         
@@ -130,6 +138,7 @@ class CompanyDetailPresenterTest: XCTestCase {
         var loadCompanyCalled = false
         var loadCompanyID: Int? = nil
         var runRefreshProcessCalled = false
+        var stopRefreshProcessCalled = false
         
         func loadCompany(with id: Int) {
             loadCompanyCalled = true
@@ -138,6 +147,10 @@ class CompanyDetailPresenterTest: XCTestCase {
         
         func runRefreshProcess() {
             runRefreshProcessCalled = true
+        }
+        
+        func stopRefreshProcess() {
+            stopRefreshProcessCalled = true
         }
         
     }

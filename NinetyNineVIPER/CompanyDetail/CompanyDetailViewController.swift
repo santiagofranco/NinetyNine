@@ -34,6 +34,11 @@ class CompanyDetailViewController: UIViewController {
         delegate?.viewDidLoad()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        delegate?.viewWillDisappear()
+    }
+    
     fileprivate func setupShadow() {
         setShadow(to: shadowView)
         setShadow(to: descriptionContainer)
