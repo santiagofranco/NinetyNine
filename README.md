@@ -10,3 +10,5 @@ There are two branches, master and rxswift.
 2. rxswift contains also a VIPER architecuture, but using rxswift & rxcocoa for events in view side, and rxswift for network calls and timer logic in interactors side. I also adapted the .test suite so the test are still passing.
 
 UI testing left out because of simplifying.
+
+I was learning RxSwift programming whilst made this app, so I used it in the best manner I figured out how, and in the manner, I consider the code is still clean, maintainable, scalable and testable.
