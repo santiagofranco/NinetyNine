@@ -12,3 +12,5 @@ There are two branches, master and rxswift.
 UI testing left out because of simplifying.
 
 I was learning RxSwift programming whilst made this app, so I used it in the best manner I figured out how, and in the manner, I consider the code is still clean, maintainable, scalable and testable.
+
+The VIPER architecture is an implementation of this [clean architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
